@@ -152,6 +152,7 @@ function Desktop() {
     moved: boolean;
   } | null>(null);
   const lastClickRef = useRef<{ id: string; time: number } | null>(null);
+  const singleClickTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Contexts & hooks
   const { openWindow } = useWindows();
@@ -243,7 +244,7 @@ function Desktop() {
     const timer = setTimeout(() => {
       pushNotif("Bienvenue !", visitCount > 1
         ? `C'est votre ${visitCount}ème visite. Heureux de vous revoir !`
-        : "Double-cliquez sur un dossier pour l'ouvrir."
+        : "Cliquez sur un dossier pour l'ouvrir."
       );
     }, 2500);
     return () => clearTimeout(timer);
@@ -308,17 +309,67 @@ function Desktop() {
       const now = Date.now();
       const last = lastClickRef.current;
       if (last && last.id === section && now - last.time < 400) {
+        // Double click: open immediately, cancel pending single-click timer
+        if (singleClickTimerRef.current) {
+          clearTimeout(singleClickTimerRef.current);
+          singleClickTimerRef.current = null;
+        }
         play("open");
         openWindow(section);
         setSelectedFolder(null);
         lastClickRef.current = null;
       } else {
+        // First click: select and schedule open after 400ms
         play("click");
         setSelectedFolder(section);
         lastClickRef.current = { id: section, time: now };
+        if (singleClickTimerRef.current) {
+          clearTimeout(singleClickTimerRef.current);
+        }
+        singleClickTimerRef.current = setTimeout(() => {
+          play("open");
+          openWindow(section);
+          setSelectedFolder(null);
+          lastClickRef.current = null;
+          singleClickTimerRef.current = null;
+        }, 400);
       }
     }
     dragRef.current = null;
+  };
+
+  // Mobile folder click handler (single or double click opens)
+  const mobileLastClickRef = useRef<{ id: string; time: number } | null>(null);
+  const mobileSingleClickTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleMobileFolderClick = (section: Section) => {
+    const now = Date.now();
+    const last = mobileLastClickRef.current;
+    if (last && last.id === section && now - last.time < 400) {
+      // Double tap: open immediately
+      if (mobileSingleClickTimerRef.current) {
+        clearTimeout(mobileSingleClickTimerRef.current);
+        mobileSingleClickTimerRef.current = null;
+      }
+      play("open");
+      openWindow(section);
+      mobileLastClickRef.current = null;
+    } else {
+      // First tap: select, schedule open after 400ms
+      play("click");
+      setSelectedFolder(section);
+      mobileLastClickRef.current = { id: section, time: now };
+      if (mobileSingleClickTimerRef.current) {
+        clearTimeout(mobileSingleClickTimerRef.current);
+      }
+      mobileSingleClickTimerRef.current = setTimeout(() => {
+        play("open");
+        openWindow(section);
+        setSelectedFolder(null);
+        mobileLastClickRef.current = null;
+        mobileSingleClickTimerRef.current = null;
+      }, 400);
+    }
   };
 
   const handleReboot = useCallback(() => {
@@ -364,7 +415,7 @@ function Desktop() {
           {/* PORTFOLIO title + name */}
           <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
             <motion.h1
-              className="text-5xl sm:text-7xl md:text-8xl font-bold text-primary/40 dark:text-dp/30 tracking-[0.2em] select-none font-heading group"
+              className="text-3xl sm:text-7xl md:text-8xl font-bold text-primary/40 dark:text-dp/30 tracking-[0.2em] select-none font-heading group"
               variants={titleEntrance}
               initial="hidden"
               animate={desktopReady ? "visible" : "hidden"}
@@ -424,7 +475,7 @@ function Desktop() {
                         <rect x="4" y="2" width="8" height="12" rx="4" stroke="currentColor" strokeWidth="1.5" />
                         <line x1="8" y1="5" x2="8" y2="7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
-                      DOUBLE-CLIC
+                      CLIC / DOUBLE-CLIC
                     </span>
                     <span style={{ opacity: 0.35 }}>·</span>
                     <span className="flex items-center" style={{ gap: "0.4rem" }}>
@@ -449,7 +500,7 @@ function Desktop() {
           </div>
 
           {/* ===== MOBILE FOLDERS (grid) ===== */}
-          <div className="flex flex-wrap justify-center gap-8 pt-10 px-6 sm:hidden">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-5 pt-8 px-8 sm:hidden">
             {folders.map((f, i) => (
               <motion.div
                 key={f.id}
@@ -457,13 +508,16 @@ function Desktop() {
                 initial="hidden"
                 animate={desktopReady ? "visible" : "hidden"}
                 custom={i}
+                className={`flex justify-center ${
+                  selectedFolder === f.id
+                    ? "drop-shadow-[0_0_12px_rgba(83,153,135,0.4)]"
+                    : ""
+                }`}
+                onClick={(e) => e.stopPropagation()}
               >
                 <FolderIcon
                   label={f.label}
-                  onClick={() => {
-                    play("open");
-                    openWindow(f.id);
-                  }}
+                  onClick={() => handleMobileFolderClick(f.id)}
                   isOpen={false}
                 />
               </motion.div>

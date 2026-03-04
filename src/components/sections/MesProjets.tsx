@@ -57,7 +57,7 @@ function ProjectMockup({ src, alt }: { src: string; alt: string }) {
           alt={alt}
           width={240}
           height={160}
-          className="w-[240px] h-auto object-contain rounded-xl"
+          className="w-full sm:w-[240px] h-auto object-contain rounded-xl"
         />
       </motion.div>
     </motion.div>

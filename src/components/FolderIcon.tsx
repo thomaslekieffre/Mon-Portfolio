@@ -18,7 +18,7 @@ export default function FolderIcon({
   return (
     <Component
       onClick={onClick}
-      className="flex flex-col items-center gap-1.5 group cursor-pointer transition-transform duration-200 hover:scale-110 active:scale-95"
+      className="flex flex-col items-center gap-1 sm:gap-1.5 group cursor-pointer transition-transform duration-200 hover:scale-110 active:scale-95"
     >
       <Image
         src={isOpen ? "/dossier-ouvert.png" : "/dossier-ferme.png"}
@@ -26,9 +26,9 @@ export default function FolderIcon({
         width={90}
         height={90}
         draggable={false}
-        className="object-contain drop-shadow-md transition-all duration-300 group-hover:drop-shadow-[0_4px_12px_rgba(83,153,135,0.3)]"
+        className="w-16 h-16 sm:w-[90px] sm:h-[90px] object-contain drop-shadow-md transition-all duration-300 group-hover:drop-shadow-[0_4px_12px_rgba(83,153,135,0.3)]"
       />
-      <span className="text-primary-dark dark:text-dh text-xs font-bold tracking-wider uppercase font-heading transition-colors duration-500 select-none">
+      <span className="text-primary-dark dark:text-dh text-[10px] sm:text-xs font-bold tracking-wider uppercase font-heading transition-colors duration-500 select-none text-center leading-tight">
         {label}
       </span>
     </Component>

@@ -174,7 +174,7 @@ export default function ExplorerWindow({
         className={`overflow-y-auto modal-scroll flex-1 bg-surface dark:bg-ds border-x-[4px] border-b-[4px] border-primary dark:border-dp transition-colors duration-500 ${
           isMax ? "" : "rounded-b-2xl"
         }`}
-        style={{ padding: "2rem 2.5rem" }}
+        style={{ padding: isMobile ? "1.25rem 1rem" : "2rem 2.5rem" }}
       >
         {children}
       </div>
