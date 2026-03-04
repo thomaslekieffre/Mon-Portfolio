@@ -139,6 +139,7 @@ function Desktop() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [typedName, setTypedName] = useState("");
   const [showHint, setShowHint] = useState(false);
+  const [showToast, setShowToast] = useState(true);
 
   // Folder drag state
   const [selectedFolder, setSelectedFolder] = useState<string | null>(null);
@@ -229,6 +230,13 @@ function Desktop() {
       clearTimeout(showTimer);
       clearTimeout(hideTimer);
     };
+  }, [desktopReady]);
+
+  /* ---- Toast auto-dismiss ---- */
+  useEffect(() => {
+    if (!desktopReady) return;
+    const timer = setTimeout(() => setShowToast(false), 30000);
+    return () => clearTimeout(timer);
   }, [desktopReady]);
 
   /* ---- Visitor counter ---- */
@@ -568,7 +576,7 @@ function Desktop() {
 
           {/* ===== TOAST (welcome) ===== */}
           <AnimatePresence>
-            {desktopReady && (
+            {desktopReady && showToast && (
               <motion.div
                 className="absolute font-heading text-xs tracking-wider pointer-events-none"
                 variants={toastVariants}
@@ -585,10 +593,6 @@ function Desktop() {
                   padding: "0.6rem 1.2rem",
                   color: "rgba(35, 80, 75, 0.9)",
                   boxShadow: "0 4px 20px rgba(83, 153, 135, 0.15)",
-                }}
-                onAnimationComplete={() => {
-                  // Auto-dismiss after 4s
-                  setTimeout(() => setDesktopReady((prev) => prev), 4000);
                 }}
               >
                 Bienvenue sur mon portfolio
