@@ -56,8 +56,8 @@ export function useSoundManager() {
           osc.stop(t + def.durations[i]);
           t += def.durations[i];
         }
-      } catch {
-        // Audio not available
+      } catch (err) {
+        console.warn("Audio playback failed:", err);
       }
     },
     [muted, getCtx]

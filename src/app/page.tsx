@@ -11,7 +11,7 @@ import { SoundProvider, useSound } from "@/contexts/SoundContext";
 import { WindowProvider, useWindows } from "@/contexts/WindowContext";
 import { useKonamiCode } from "@/hooks/useKonamiCode";
 import { useNotifications } from "@/hooks/useNotifications";
-import { folders, type Section } from "@/lib/constants";
+import { folders, type Section, DOUBLE_CLICK_DELAY, TASKBAR_BOTTOM_PADDING, BOOT_FRAME_INTERVAL, BOOT_FRAMES } from "@/lib/constants";
 import {
   folderEntrance,
   titleEntrance,
@@ -178,7 +178,7 @@ function Desktop() {
     const interval = setInterval(() => {
       frame++;
       setBootProgress((p) => Math.min(p + Math.random() * 12 + 4, 100));
-      if (frame >= 10) {
+      if (frame >= BOOT_FRAMES) {
         clearInterval(interval);
         setBootProgress(100);
         setTimeout(() => setBootFading(true), 400);
@@ -187,7 +187,7 @@ function Desktop() {
           setDesktopReady(true);
         }, 1100);
       }
-    }, 150);
+    }, BOOT_FRAME_INTERVAL);
     return () => clearInterval(interval);
   }, []);
 
@@ -285,8 +285,8 @@ function Desktop() {
     };
     try {
       (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
-    } catch {
-      // pointerId may not be active
+    } catch (err) {
+      console.warn("setPointerCapture failed:", err);
     }
   };
 
@@ -308,7 +308,7 @@ function Desktop() {
     if (dragRef.current && !dragRef.current.moved) {
       const now = Date.now();
       const last = lastClickRef.current;
-      if (last && last.id === section && now - last.time < 400) {
+      if (last && last.id === section && now - last.time < DOUBLE_CLICK_DELAY) {
         // Double click: open immediately, cancel pending single-click timer
         if (singleClickTimerRef.current) {
           clearTimeout(singleClickTimerRef.current);
@@ -332,7 +332,7 @@ function Desktop() {
           setSelectedFolder(null);
           lastClickRef.current = null;
           singleClickTimerRef.current = null;
-        }, 400);
+        }, DOUBLE_CLICK_DELAY);
       }
     }
     dragRef.current = null;
@@ -345,7 +345,7 @@ function Desktop() {
   const handleMobileFolderClick = (section: Section) => {
     const now = Date.now();
     const last = mobileLastClickRef.current;
-    if (last && last.id === section && now - last.time < 400) {
+    if (last && last.id === section && now - last.time < DOUBLE_CLICK_DELAY) {
       // Double tap: open immediately
       if (mobileSingleClickTimerRef.current) {
         clearTimeout(mobileSingleClickTimerRef.current);
@@ -368,7 +368,7 @@ function Desktop() {
         setSelectedFolder(null);
         mobileLastClickRef.current = null;
         mobileSingleClickTimerRef.current = null;
-      }, 400);
+      }, DOUBLE_CLICK_DELAY);
     }
   };
 
@@ -408,7 +408,7 @@ function Desktop() {
         }}
         style={{
           backgroundPosition: `${mousePos.x * 5}px ${mousePos.y * 5}px`,
-          paddingBottom: "80px",
+          paddingBottom: `${TASKBAR_BOTTOM_PADDING}px`,
         }}
       >
         <div className="flex-1 relative">

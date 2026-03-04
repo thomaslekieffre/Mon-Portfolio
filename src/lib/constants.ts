@@ -35,3 +35,14 @@ export const socialLinks = [
   { href: "https://github.com/thomaslekieffre", src: "/icone-github.png", alt: "GitHub" },
   { href: "https://x.com/thomasdev59", src: "/icone-x.png", alt: "X" },
 ];
+
+/* ---- UI Constants ---- */
+export const DOUBLE_CLICK_DELAY = 400;
+export const TASKBAR_HEIGHT = 48;
+export const TASKBAR_BOTTOM_PADDING = 80;
+export const CLOCK_UPDATE_INTERVAL = 30000;
+export const BOOT_FRAME_INTERVAL = 150;
+export const BOOT_FRAMES = 10;
+export const CONNECTION_DISTANCE = 150;
+export const TYPING_SPEED = 12;
+export const FOLDER_ICON_SIZE = 90;

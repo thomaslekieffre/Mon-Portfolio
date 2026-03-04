@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useWindows } from "@/contexts/WindowContext";
-import type { Section } from "@/lib/constants";
+import { type Section, TYPING_SPEED } from "@/lib/constants";
 
 interface Line {
   type: "input" | "output";
@@ -67,7 +67,7 @@ export default function Terminal() {
           setTypingOutput(null);
           setLines((prev) => [...prev, { type: "output", text }]);
         }
-      }, 12);
+      }, TYPING_SPEED);
     },
     []
   );

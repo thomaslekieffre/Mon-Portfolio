@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
+import { CONNECTION_DISTANCE } from "@/lib/constants";
 
 const PARTICLE_COUNT = 80;
 const STORAGE_KEY = "portfolio-particles";
@@ -109,11 +110,11 @@ export default function ParticleBackground({
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
+          if (dist < CONNECTION_DISTANCE) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(${c.r}, ${c.g}, ${c.b}, ${0.25 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `rgba(${c.r}, ${c.g}, ${c.b}, ${0.25 * (1 - dist / CONNECTION_DISTANCE)})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }

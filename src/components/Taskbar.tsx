@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useWindows } from "@/contexts/WindowContext";
 import { useSound } from "@/contexts/SoundContext";
 import Image from "next/image";
-import { appTitles, socialLinks } from "@/lib/constants";
+import { appTitles, socialLinks, CLOCK_UPDATE_INTERVAL } from "@/lib/constants";
 import StartMenu from "@/components/StartMenu";
 import { menuSlide } from "@/lib/animations";
 
@@ -41,7 +41,7 @@ export default function Taskbar({
       );
     };
     update();
-    const interval = setInterval(update, 30000);
+    const interval = setInterval(update, CLOCK_UPDATE_INTERVAL);
     return () => clearInterval(interval);
   }, []);
 
