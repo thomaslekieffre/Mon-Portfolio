@@ -34,6 +34,7 @@ export const socialLinks = [
   { href: "mailto:thomaslekieffre59.dev@gmail.com", src: "/icone-mail.png", alt: "Email" },
   { href: "https://github.com/thomaslekieffre", src: "/icone-github.png", alt: "GitHub" },
   { href: "https://x.com/thomasdev59", src: "/icone-x.png", alt: "X" },
+  { href: "https://www.linkedin.com/in/thomas-lekieffre-988224319/", src: "/icone-linkedin.svg", alt: "LinkedIn" },
 ];
 
 /* ---- UI Constants ---- */
