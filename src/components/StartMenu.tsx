@@ -125,14 +125,14 @@ export default function StartMenu({
               target={link.href.startsWith("mailto") ? undefined : "_blank"}
               rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
               aria-label={link.alt}
-              className="w-9 h-9 rounded-xl overflow-hidden hover:scale-110 active:scale-95 transition-transform cursor-pointer shadow-sm"
+              className="relative block shrink-0 size-9 rounded-[12px] overflow-hidden hover:scale-110 active:scale-95 transition-transform cursor-pointer"
             >
               <Image
                 src={link.src}
                 alt={link.alt}
                 width={36}
                 height={36}
-                className="w-full h-full object-cover"
+                className="size-9 object-contain"
               />
             </a>
           ))}

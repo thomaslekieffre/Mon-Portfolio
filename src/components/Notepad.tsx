@@ -2,10 +2,14 @@
 
 import { useState, useCallback } from "react";
 
-const DEFAULT_TEXT = `Bienvenue dans le Bloc-notes ! 📝
+const DEFAULT_TEXT = `Bienvenue dans le Bloc-notes !
 
 Ce portfolio a été créé par Thomas Lekieffre,
-développeur full-stack passionné.
+dev fullstack — créateur de Speedcube Master.
+
+Projets phares :
+- Speedcube Master (speedcubemaster.app)
+- INAdex, ClipFlow, Portfolio Zoé Marchal
 
 N'hésitez pas à écrire ce que vous voulez ici...
 C'est votre espace !

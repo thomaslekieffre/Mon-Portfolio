@@ -187,51 +187,64 @@ export default function MesProjets() {
       <div className="space-y-10">
         <Project
           isFirst
-          title="SPEEDCUBEMASTER"
-          description="Plateforme de référence française avec ambitions internationales pour le speedcubing avec fonctionnalités complètes :"
+          title="SPEEDCUBE MASTER"
+          description="Plateforme complète de speedcubing (+1800 utilisateurs). App Android live, iOS en cours, monétisation freemium Stripe. Ambitions internationales :"
           features={[
-            "Timer WCA conforme avec inspection et calcul automatique de moyennes (Ao5, Ao12, Ao100)",
-            "Système de rooms en temps réel pour faire des compétitions en ligne entre amis",
-            "Base de données complète d'algorithmes avec système de révision intelligente",
+            "Timer WCA conforme avec inspection, pénalités et moyennes auto (Ao5, Ao12, Ao100)",
+            "Rooms live, challenges quotidiens, WCA live et module de training complet",
+            "Base d'algorithmes CFOP avec révision espacée, détection de phases et cubes GAN Bluetooth",
+            "I18N complet (FR/EN), sync cloud, multi-puzzle (2x2 → 4x4+)",
           ]}
           mockupSrc="/mockup-speedcubemaster.png"
-          mockupAlt="SpeedCubeMaster"
-          stack={["NextJs", "tailwindcss", "Supabase", "Clerk"]}
-          host={["VPS chez ovh, avec coolify"]}
+          mockupAlt="SpeedCube Master"
+          stack={["NextJs", "tailwindcss", "Supabase", "Clerk", "Stripe"]}
+          host={["VPS OVH + Coolify"]}
           codeAvailable={false}
         />
         <Project
           title="INADEX"
-          description="Lorem ipsum dolor sit amet consectetur. Leo odio morbi quis at sed id gravida ultricies enim. Neque tincidunt sed nunc mauris felis velit aliquam volutpat. Neque tortor dignissim morbi vitae enim donec dictum. Leo mus felis in sit ac."
+          description="Dex ultime pour Inazuma Eleven Victory Road — explore, compare et simule les stats de tous les joueurs :"
+          features={[
+            "5500+ joueurs synchronisés avec scaling de rareté et 15+ stats",
+            "Filtres avancés, radar de stats et comparaison entre raretés",
+            "Collection personnelle pour tracker ses joueurs",
+            "Auth Discord via Better Auth, thème dark UX gaming",
+          ]}
           mockupSrc="/mockup-inadex.png"
-          mockupAlt="Inadex"
+          mockupAlt="INAdex — Victory Road Database"
           stack={["Better Auth", "NextJs", "Tailwindcss", "Shadcn"]}
           host={["VPS", "Coolify"]}
-          codeAvailable={true}
+          codeAvailable={false}
         />
         <Project
           title="CLIPFLOW"
-          description="Outil innovant de capture d'écran intelligent pour créer des vidéos sans montage."
+          description="App desktop Windows de capture d'écran & assemblage vidéo. Enregistre des zones, assemble sur une timeline, exporte en MP4."
           features={[
-            "Enregistrement de zones précises de l'écran (pas tout le bureau)",
-            "Export direct en MP4 ou GIF avec plusieurs qualités (1080p, 720p, etc.)",
-            "Suivi visuel automatique des touches clavier et clics souris",
-            "Création de multiples clips courts avec transitions automatiques",
-            "Génération insérée de vidéos complètes prêtes à publier",
+            "Capture de zones précises (multi-moniteur, HiDPI) ou fullscreen",
+            "Timeline drag & drop avec 19 transitions (fade, wipe, zoom, iris…)",
+            "Preview rapide + export MP4 via FFmpeg xfade",
+            "Hotkeys globaux (F9/ESC), watermark optionnel, thème clair/sombre",
           ]}
           mockupSrc="/mockup-clipflow.png"
           mockupAlt="ClipFlow"
-          stack={["Rust", "Tokio", "React", "tailwindcss", "FFmpeg"]}
+          stack={["Tauri", "Rust", "React", "tailwindcss", "FFmpeg"]}
           codeAvailable={true}
+          repoUrl="https://github.com/thomaslekieffre/ClipFlow"
         />
         <Project
-          title="INTÉGRATION D'UN PORTFOLIO"
-          description="Lorem ipsum dolor sit amet consectetur. Leo odio morbi quis at sed id gravida ultricies enim. Neque tincidunt sed nunc mauris felis velit aliquam volutpat. Neque tortor dignissim morbi vitae enim donec dictum."
+          title="PORTFOLIO ZOÉ MARCHAL"
+          description="Intégration du portfolio de Zoé Marchal, graphic designer — identité visuelle, UI, affiche et édition. Site vitrine animé, direction artistique forte."
+          features={[
+            "Hero expressif avec typo custom et illustration intégrée",
+            "Sections projets (identité, UI, print) avec animations Framer Motion",
+            "Responsive mobile-first, déploiement Vercel",
+          ]}
           mockupSrc="/mockup-portfolio.png"
-          mockupAlt="Portfolio"
-          stack={["NextJs", "tailwindcss", "Supabase", "Framer Motion"]}
+          mockupAlt="Portfolio Zoé Marchal"
+          stack={["NextJs", "tailwindcss", "Framer Motion"]}
           host={["Vercel"]}
           codeAvailable={true}
+          repoUrl="https://github.com/thomaslekieffre/zoemarchal-portfolio"
         />
       </div>
     </motion.div>

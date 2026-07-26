@@ -143,7 +143,7 @@ export default function Taskbar({
         </div>
 
         {/* Social links */}
-        <div className="flex items-center ml-auto" style={{ gap: 6 }}>
+        <div className="flex items-center ml-auto shrink-0" style={{ gap: 8 }}>
           {socialLinks.map((link) => (
             <a
               key={link.alt}
@@ -151,14 +151,14 @@ export default function Taskbar({
               target={link.href.startsWith("mailto") ? undefined : "_blank"}
               rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
               aria-label={link.alt}
-              className="w-8 h-8 rounded-lg overflow-hidden hover:scale-110 active:scale-95 transition-transform cursor-pointer"
+              className="relative block shrink-0 size-8 rounded-[10px] overflow-hidden hover:scale-110 active:scale-95 transition-transform cursor-pointer"
             >
               <Image
                 src={link.src}
                 alt={link.alt}
                 width={32}
                 height={32}
-                className="w-full h-full object-cover"
+                className="size-8 object-contain"
               />
             </a>
           ))}

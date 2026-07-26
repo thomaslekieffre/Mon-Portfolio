@@ -18,21 +18,23 @@ const aldrich = Aldrich({
 export const metadata: Metadata = {
   title: "Thomas Lekieffre - Développeur Full-Stack",
   description:
-    "Portfolio de Thomas Lekieffre, développeur full-stack passionné. Next.js, React, TypeScript, Rust. Découvrez mes projets et compétences.",
+    "Portfolio de Thomas Lekieffre — créateur de Speedcube Master (+1800 users). Next.js, React, TypeScript, Rust/Tauri. Projets, parcours et compétences.",
   keywords: [
     "Thomas Lekieffre",
     "développeur",
     "full-stack",
     "portfolio",
+    "Speedcube Master",
     "React",
     "Next.js",
     "TypeScript",
+    "Rust",
   ],
   authors: [{ name: "Thomas Lekieffre" }],
   openGraph: {
     title: "Thomas Lekieffre - Développeur Full-Stack",
     description:
-      "Portfolio de Thomas Lekieffre, développeur full-stack passionné. Découvrez mes projets et compétences.",
+      "Créateur de Speedcube Master. Portfolio fullstack — projets, parcours et compétences.",
     type: "website",
     locale: "fr_FR",
   },
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Thomas Lekieffre - Développeur Full-Stack",
     description:
-      "Portfolio de Thomas Lekieffre, développeur full-stack passionné.",
+      "Créateur de Speedcube Master (+1800 users). Portfolio fullstack.",
   },
   robots: {
     index: true,

@@ -16,8 +16,8 @@ const NEOFETCH = `
      ██║   ██║     Shell: web-terminal
      ██║   ███████╗ Uptime: since 2009
      ╚═╝   ╚══════╝ Stack: Next.js, React, TypeScript
-                     Langages: JS, TS, Rust, SQL, Python
-                     Passion: Speedcubing
+                     Langages: JS, TS, Rust, C#, SQL, Python
+                     Passion: Speedcubing · GameDev
 `;
 
 const HELP_TEXT = `Commandes disponibles:
@@ -96,26 +96,26 @@ export default function Terminal() {
           break;
         case "whoami":
           addOutput(
-            "Thomas Lekieffre - 17 ans, développeur full-stack passionné. Terminale NSI, futur étudiant à l'École IT de Valenciennes.",
+            "Thomas Lekieffre - 18 ans, fullstack @ Valenciennes. Créateur de Speedcube Master (+1800 users). Terminale NSI → école d'informatique (rentrée 2026).",
             true
           );
           break;
         case "skills":
           addOutput(
-            "Frontend: Next.js, React, Tailwind CSS\nBackend: Supabase, PostgreSQL, Rust, Node\nDevOps: Docker, GitHub, VPS, Coolify",
+            "Langages: TS/JS (expert) · SQL · HTML/CSS · C# · Python · Rust\nFrontend: Next.js, React, Tailwind, Framer Motion, Shadcn\nBackend: Supabase, Postgres, Clerk, Better Auth, Node, Rust/Tauri\nDevOps: Docker, Coolify, VPS OVH, Vercel, GitHub\nGameDev: Unity, RPG Maker · Tooling: Cursor, Claude Code, Stripe, FFmpeg",
             true
           );
           break;
         case "projects":
         case "projets":
           addOutput(
-            "1. SpeedCubeMaster - Plateforme de speedcubing\n2. Inadex - Application web\n3. ClipFlow - Capture d'écran intelligent\n4. Portfolio - Ce site !",
+            "1. Speedcube Master - Plateforme speedcubing (+1800 users) → speedcubemaster.app\n2. INAdex - Dex Victory Road (Inazuma Eleven)\n3. ClipFlow - Capture écran + timeline (Tauri/Rust)\n4. Portfolio Zoé Marchal - Intégration Next.js\n(+ Zone Tactics, NoteFlow, Lego Tracker…)",
             true
           );
           break;
         case "contact":
           addOutput(
-            "Email: thomas.lekieffre@example.com\nGitHub: github.com\nX: x.com",
+            "Email: thomaslekieffre59.dev@gmail.com\nGitHub: github.com/thomaslekieffre\nX: x.com/thomasdev59\nLinkedIn: linkedin.com/in/thomas-lekieffre-988224319\nYouTube: youtube.com/@icithomas",
             true
           );
           break;

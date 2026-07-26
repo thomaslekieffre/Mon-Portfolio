@@ -31,20 +31,18 @@ export default function APropos() {
         </div>
         <div className="text-body dark:text-db text-base leading-relaxed space-y-6">
           <p>
-            Je m&apos;appelle Thomas Lekieffre, j&apos;ai 17 ans. Actuellement
-            en terminale avec spécialité NSI dans les Hauts-de-France, je me
-            forme au développement full-stack en autodidacte depuis plusieurs
-            années. Je travaille aussi bien sur des applications web modernes que
-            mobiles, de l&apos;architecture backend à l&apos;expérience
-            utilisateur. J&apos;aime créer des outils pour des communautés
-            passionnées, tout en sachant m&apos;adapter à des projets techniques
-            complexes et structurés.
+            Je m&apos;appelle Thomas Lekieffre, j&apos;ai 18 ans. Basé à
+            Valenciennes, actuellement en terminale NSI, je code en autodidacte
+            depuis ~7 ans (JS/TS surtout). Full-stack web &amp; mobile : Next.js,
+            Supabase, apps natives — de l&apos;archi backend à l&apos;UX. Je
+            construis des outils pour des communautés passionnées, dont{" "}
+            <strong>Speedcube Master</strong> (+1800 users), tout en menant des
+            projets SaaS et indies plus techniques.
           </p>
           <p>
-            Après le lycée, je souhaite intégrer l&apos;École IT de Valenciennes
-            afin d&apos;approfondir mes compétences techniques et de faire
-            évoluer cette démarche vers un cadre professionnel structuré, avec
-            l&apos;objectif de poursuivre jusqu&apos;au Bac+5.
+            Rentrée 2026 : école d&apos;informatique pour structurer ça
+            jusqu&apos;au Bac+5, tout en faisant grandir SCM et mes projets en
+            parallèle. Ouvert aux collabs / missions freelance.
           </p>
         </div>
       </motion.div>
@@ -62,7 +60,7 @@ export default function APropos() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {["Speedcubing", "Développement", "Basketball"].map((interest) => (
+          {["Speedcubing", "Développement", "Jeux vidéo", "Basketball", "Création de contenu"].map((interest) => (
             <motion.span
               key={interest}
               variants={staggerItem}
