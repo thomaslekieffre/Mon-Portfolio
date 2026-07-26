@@ -102,7 +102,7 @@ export default function Terminal() {
           break;
         case "skills":
           addOutput(
-            "Frontend: Next.js, React, Tailwind, Framer Motion, Shadcn\nBackend: Supabase, PostgreSQL, Rust/Tauri, Node, Clerk, Better Auth\nDevOps: Docker, GitHub, VPS OVH, Coolify, Vercel\nAutre: Unity/C#, Stripe, FFmpeg",
+            "Langages: TS/JS (expert) · SQL · HTML/CSS · C# · Python · Rust\nFrontend: Next.js, React, Tailwind, Framer Motion, Shadcn\nBackend: Supabase, Postgres, Clerk, Better Auth, Node, Rust/Tauri\nDevOps: Docker, Coolify, VPS OVH, Vercel, GitHub\nGameDev: Unity, RPG Maker · Tooling: Cursor, Claude Code, Stripe, FFmpeg",
             true
           );
           break;
