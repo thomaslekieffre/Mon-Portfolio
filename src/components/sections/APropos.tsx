@@ -31,7 +31,7 @@ export default function APropos() {
         </div>
         <div className="text-body dark:text-db text-base leading-relaxed space-y-6">
           <p>
-            Je m&apos;appelle Thomas Lekieffre, j&apos;ai 17 ans. Basé à
+            Je m&apos;appelle Thomas Lekieffre, j&apos;ai 18 ans. Basé à
             Valenciennes, actuellement en terminale NSI, je code en autodidacte
             depuis ~7 ans (JS/TS surtout). Full-stack web &amp; mobile : Next.js,
             Supabase, apps natives — de l&apos;archi backend à l&apos;UX. Je
@@ -40,9 +40,9 @@ export default function APropos() {
             projets SaaS et indies plus techniques.
           </p>
           <p>
-            Rentrée 2026 : école d&apos;informatique (École IT Valenciennes) pour
-            structurer ça jusqu&apos;au Bac+5, tout en faisant grandir SCM et mes
-            projets en parallèle. Ouvert aux collabs / missions freelance.
+            Rentrée 2026 : école d&apos;informatique pour structurer ça
+            jusqu&apos;au Bac+5, tout en faisant grandir SCM et mes projets en
+            parallèle. Ouvert aux collabs / missions freelance.
           </p>
         </div>
       </motion.div>

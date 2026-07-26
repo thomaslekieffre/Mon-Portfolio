@@ -96,7 +96,7 @@ export default function Terminal() {
           break;
         case "whoami":
           addOutput(
-            "Thomas Lekieffre - 17 ans, fullstack @ Valenciennes. Créateur de Speedcube Master (+1800 users). Terminale NSI → École IT Valenciennes (rentrée 2026).",
+            "Thomas Lekieffre - 18 ans, fullstack @ Valenciennes. Créateur de Speedcube Master (+1800 users). Terminale NSI → école d'informatique (rentrée 2026).",
             true
           );
           break;

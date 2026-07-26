@@ -20,7 +20,7 @@ interface TimelineEntry {
 
 const education: TimelineEntry[] = [
   { date: "2025 - 2026", title: "Terminale Générale - Spécialité NSI (Informatique)" },
-  { date: "Sept. 2026 →", title: "École IT de Valenciennes - Formation Bac +5 (Cybersécurité / IA)" },
+  { date: "Sept. 2026 →", title: "École d'informatique - Formation Bac +5" },
   { date: "2020 - Présent", title: "Autodidacte — Web (JS/TS), Unity/C#, Rust, Python" },
 ];
 
