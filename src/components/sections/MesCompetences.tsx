@@ -40,6 +40,8 @@ export default function MesCompetences() {
               { label: "NEXT.js", filled: true },
               { label: "React", filled: false },
               { label: "tailwindcss", filled: true },
+              { label: "Framer Motion", filled: false },
+              { label: "Shadcn", filled: true },
             ].map((b) => (
               <motion.div key={b.label} variants={staggerItem}>
                 <Badge label={b.label} filled={b.filled} />
@@ -64,6 +66,8 @@ export default function MesCompetences() {
               { label: "PostgreSQL", filled: false },
               { label: "RUST", filled: true },
               { label: "node", filled: false },
+              { label: "Clerk", filled: true },
+              { label: "Better Auth", filled: false },
             ].map((b) => (
               <motion.div key={b.label} variants={staggerItem}>
                 <Badge label={b.label} filled={b.filled} />
@@ -88,6 +92,7 @@ export default function MesCompetences() {
               { label: "GITHUB", filled: false },
               { label: "VPS", filled: true },
               { label: "COOLIFY", filled: false },
+              { label: "Vercel", filled: true },
             ].map((b) => (
               <motion.div key={b.label} variants={staggerItem}>
                 <Badge label={b.label} filled={b.filled} />
@@ -110,9 +115,10 @@ export default function MesCompetences() {
         <ProgressBar label="SQL" percentage={80} />
         <ProgressBar label="HTML" percentage={95} />
         <ProgressBar label="CSS" percentage={90} />
-        <ProgressBar label="Python" percentage={15} />
+        <ProgressBar label="C#" percentage={45} />
+        <ProgressBar label="Python" percentage={35} />
+        <ProgressBar label="Rust" percentage={30} />
         <ProgressBar label="Go" percentage={20} />
-        <ProgressBar label="Rust" percentage={20} />
       </motion.div>
     </motion.div>
   );

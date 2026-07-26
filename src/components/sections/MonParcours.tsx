@@ -19,11 +19,36 @@ interface TimelineEntry {
 }
 
 const education: TimelineEntry[] = [
-  { date: "2025 - 2026", title: "Terminale Générale - Spécialité Informatique" },
-  { date: "2026 - 2027", title: "École IT de Valenciennes - Formation Bac +5 Cybersécurité ou IA" },
+  { date: "2025 - 2026", title: "Terminale Générale - Spécialité NSI (Informatique)" },
+  { date: "Sept. 2026 →", title: "École IT de Valenciennes - Formation Bac +5 (Cybersécurité / IA)" },
+  { date: "2020 - Présent", title: "Autodidacte — Web (JS/TS), Unity/C#, Rust, Python" },
 ];
 
 const experience: TimelineEntry[] = [
+  {
+    date: "2020 - Présent",
+    title: "Développeur Fullstack — Freelance & projets perso",
+    description: "Apps web & mobile, SaaS, workflow IA (Cursor / Claude Code)",
+    items: [
+      "Speedcube Master (+1800 users) — plateforme speedcubing full-stack",
+      "Zone Tactics, NoteFlow, Lego Tracker, ClipFlow, INAdex…",
+      "Self-hosting OVH + Coolify, Stripe, Clerk, Supabase",
+    ],
+  },
+  {
+    date: "2022 - Présent",
+    title: "Développeur de jeux — Indie",
+    items: [
+      "Unity (C#) + concepts IA appliqués au gaming",
+      "Moteur Deep Q-Learning pour Snake (ML-Snake)",
+      "Prototypes RPG Maker pour explorer le game design",
+    ],
+  },
+  {
+    date: "2024 - Présent",
+    title: "Créateur de contenu — Ici Thomas",
+    description: "Chaîne YouTube @icithomas + contenu projets (SCM, etc.)",
+  },
   {
     date: "Février 2023 & Juin 2024",
     title: "Mabéo Industries",

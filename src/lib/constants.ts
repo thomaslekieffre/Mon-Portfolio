@@ -31,7 +31,7 @@ export const appTitles: Record<AppId, string> = {
 };
 
 export const socialLinks = [
-  { href: "mailto:thomas.lekieffredev@gmail.com", src: "/icone-mail.png", alt: "Email" },
+  { href: "mailto:thomaslekieffre59.dev@gmail.com", src: "/icone-mail.png", alt: "Email" },
   { href: "https://github.com/thomaslekieffre", src: "/icone-github.png", alt: "GitHub" },
   { href: "https://x.com/thomasdev59", src: "/icone-x.png", alt: "X" },
 ];
